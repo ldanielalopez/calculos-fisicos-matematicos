@@ -7,7 +7,7 @@ export const calcularAreaRectangulo=(req,res)=>{
         base,
         altura,
         areaRectangulo,
-        mensaje:`Al tener una base de ${base} mt y una altura de ${altura} mt, el área del rectángulo es ${areaRectangulo} mt²`
+        mensaje:`Al tener una base de ${base} cm y una altura de ${altura} cm, el área del rectángulo es ${areaRectangulo} cm²`
     })//retorno resultado formato json
 };
 
@@ -20,7 +20,7 @@ export const calcularAreaTriangulo=(req,res)=>{
         base,
         altura,
         areaTriangulo,
-        mensaje:`Al tener una base de ${base} mt y una altura de ${altura} mt, el área del triángulo es ${areaTriangulo} mt²`
+        mensaje:`Al tener una base de ${base} cm y una altura de ${altura} cm, el área del triángulo es ${areaTriangulo} cm²`
     })//retorno resultado formato json
 };
 
@@ -33,7 +33,7 @@ export const calcularAreaCirculo = (req, res) => {
     res.json({
         radio,
         areaCirculo,
-        mensaje: `Al tener un radio de ${radio} mt, el área del círculo es ${areaCirculo} mt²`
+        mensaje: `Al tener un radio de ${radio} cm, el área del círculo es ${areaCirculo.toFixed(2)} cm²`
     });
 };
 
@@ -46,6 +46,20 @@ export const calcularHipotenusa = (req, res) => {
         catetoA,
         catetoB,
         hipotenusa,
-        mensaje: `Al tener un cateto A de ${catetoA} mt y un cateto B de ${catetoB}, la hipotenusa es ${hipotenusa} mt`
+        mensaje: `Al tener un cateto A de ${catetoA} cm y un cateto B de ${catetoB} cm, la hipotenusa es ${hipotenusa.toFixed(2)} cm`
+    });
+};
+
+//angulo
+export const calcularAngulo = (req, res ) => {
+    const { catetoA, catetoB } = req.body;
+    const anguloRadianes = Math.atan(catetoA / catetoB);
+    const anguloGrados = Number((anguloRadianes * (180 / Math.PI)));
+
+    res.json({
+        catetoA,
+        catetoB,
+        anguloGrados,
+        mensaje: `Al tener un cateto A de ${catetoA} cm y un cateto B de ${catetoB} cm, el ángulo es de ${anguloGrados.toFixed(2)}°`
     });
 };
