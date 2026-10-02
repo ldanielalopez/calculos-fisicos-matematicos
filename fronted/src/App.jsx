@@ -16,7 +16,7 @@ function App() {
   const [seccion, setSeccion] = useState("velocidad");
   const renderizarComponente = () => {
     switch (seccion) {
-      // Cálculos físicos
+      // Cálculos fisica
       case "velocidad":
         return <Velocidad />;
       case "distancia":
@@ -29,7 +29,7 @@ function App() {
         return <Peso />;
       case "energiacinetica":
         return <EnergiaCinetica />;
-      
+      // Cálculos matematicas
       case "areaRectangulo":
         return <AreaRectangulo />;
       case "areaTriangulo":
@@ -50,7 +50,7 @@ function App() {
     <div className="flex h-screen">
       <Sidebar cambiarSeccion={setSeccion} seccionActiva={seccion} />
       
-      <div className="flex-1 p-8 bg-[#E4E4E5] overflow-y-auto">
+      <div className="flex-1 p-8 bg-[#f5e6fb] overflow-y-auto">
         {renderizarComponente()}
       </div>
     </div>

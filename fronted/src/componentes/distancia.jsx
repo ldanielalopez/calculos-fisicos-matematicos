@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 function Distancia() {
-    const [velocidad, setVelocidad] = useState(0);
-    const [tiempo, setTiempo] = useState(0);
+    const [velocidad, setVelocidad] = useState(undefined);
+    const [tiempo, setTiempo] = useState(undefined);
     const [resultado, setResultado] = useState(null);
 
 
@@ -30,7 +30,7 @@ function Distancia() {
             <div className="space-y-6">
                 <div>
                     <input
-                        type="number"
+                        //type="number"
                         placeholder="Ingrese el valor de la velocidad"
                         className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-cyan-600 transition-all duration-200"
                         onChange={(e) => setVelocidad(Number(e.target.value))}
@@ -38,7 +38,7 @@ function Distancia() {
                 </div>
                 <div>
                     <input
-                        type="number"
+                        //type="number"
                         placeholder="Ingrese el valor del tiempo"
                         className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-cyan-600 transition-all duration-200"
                         onChange={(e) => setTiempo(Number(e.target.value))}

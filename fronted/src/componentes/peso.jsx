@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function Peso() {
-    const [masa, setMasa] = useState(0);
+    const [masa, setMasa] = useState(undefined);
     const [resultado, setResultado] = useState(null);
     const gravedad= 9.8;
 
@@ -28,7 +28,7 @@ function Peso() {
             <hr className="border-slate-200 my-3" />
             <div>
                     <input
-                        type="number"
+                        //type="number"
                         placeholder="Ingrese el valor de la masa"
                         className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-cyan-600 transition-all duration-200"
                         onChange={(e) => setMasa(Number(e.target.value))}

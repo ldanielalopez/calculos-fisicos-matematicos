@@ -29,7 +29,7 @@ function Angulo() {
             <div className="space-y-6">
                 <div>
                     <input
-                        type="number"
+                        //type="number"
                         placeholder="Ingrese el valor del Cateto A"
                         className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-cyan-600 transition-all duration-200"
                         onChange={(e) => SetCatetoA(Number(e.target.value))}

@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 function EnergiaCinetica() {
-    const [masa, setMasa] = useState(0);
-    const [velocidad, setVelocidad] = useState(0);
+    const [masa, setMasa] = useState(undefined);
+    const [velocidad, setVelocidad] = useState(undefined);
     const [resultado, setResultado] = useState(null);
-
 
 
     const calcularEnergiaCinetica = async() => {
@@ -30,7 +29,7 @@ function EnergiaCinetica() {
             <div className="space-y-6">
                 <div>
                     <input
-                        type="number"
+                        //type="number"
                         placeholder="Ingrese el valor de la masa"
                         className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-cyan-600 transition-all duration-200"
                         onChange={(e) => setMasa(Number(e.target.value))}
@@ -38,7 +37,7 @@ function EnergiaCinetica() {
                 </div>
                 <div>
                     <input
-                        type="number"
+                        //type="number"
                         placeholder="Ingrese el valor de la velocidad"
                         className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-cyan-600 transition-all duration-200"
                         onChange={(e) => setVelocidad(Number(e.target.value))}

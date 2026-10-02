@@ -3,21 +3,21 @@
 export const validarVelocidad = (req, res, next) => {
     const { distancia, tiempo } = req.body;
 
-        if (tiempo === undefined || distancia === undefined) {
+    if (distancia === undefined || tiempo === undefined) {
         return res.status(400).json({
             error: "Datos incompletos"
         });
     };
 
-        if(typeof tiempo !== "number" || typeof distancia !== "number"){
+    if(typeof distancia !== "number" || typeof tiempo !== "number"){
         return res.status(400).json({
             error: "El tiempo y la distancia deben ser números"
         });
     };
 
-        if (tiempo <= 0) {
+    if (distancia <= 0 || tiempo <= 0) {
         return res.status(400).json({
-            error: "El valor de tiempo no puede ser negativo"
+            error: "El valor de distancia y tiempo no pueden ser 0 ó negativo"
         });
     };
     next();
@@ -41,7 +41,7 @@ export const validarDistancia = (req, res, next) => {
     
     if (velocidad <= 0 || tiempo <= 0){
         return res.status(400).json({
-            error: "El tiempo y la velocidad no pueden ser negativos"
+            error: "El valor de tiempo no puede ser 0 ó negativo"
         });
     }
     next();
